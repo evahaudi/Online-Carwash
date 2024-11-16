@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Typography, TextField, Button, Grid, Paper, Link, useMediaQuery, useTheme } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import axios
+import Swal from 'sweetalert2';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -45,7 +46,12 @@ const Register = () => {
       }
     } catch (error) {
       console.error('Error during registration:', error);
-      alert('Network error. Please try again.');
+      Swal.fire({
+        title: 'Error!',
+        text: 'phone number already exist',
+        icon: 'error',
+        confirmButtonText: 'Try Again',
+      });
     }
   };
   

@@ -421,4 +421,4 @@ const ManagerDashboard = () => {
   );
 };
 
-expor
+export default ManagerDashboard;
